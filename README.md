@@ -1,6 +1,6 @@
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Incrementers)](https://www.nuget.org/packages/Platform.Incrementers)
 [![Actions Status](https://github.com/linksplatform/Incrementers/workflows/CD/badge.svg)](https://github.com/linksplatform/Incrementers/actions?workflow=CD)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea4406f2974c4d509526f124ef117c4a)](https://www.codacy.com/app/drakonard/Incrementers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=linksplatform/Incrementers&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7e7e4a927ce740d7a1b85ac17823f465)](https://www.codacy.com/gh/linksplatform/Incrementers/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=linksplatform/Incrementers&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/Incrementers/badge)](https://www.codefactor.io/repository/github/linksplatform/Incrementers)
 
 # [Incrementers](https://github.com/linksplatform/Incrementers)
