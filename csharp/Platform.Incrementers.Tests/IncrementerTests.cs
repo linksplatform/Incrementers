@@ -2,8 +2,20 @@ using Xunit;
 
 namespace Platform.Incrementers.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the incrementer tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public class IncrementerTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that parameterless constructed setter test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void ParameterlessConstructedSetterTest()
         {
@@ -11,6 +23,12 @@ namespace Platform.Incrementers.Tests
             Assert.Equal(default, incrementer.Result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that constructed with default value setter test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void ConstructedWithDefaultValueSetterTest()
         {
@@ -18,6 +36,12 @@ namespace Platform.Incrementers.Tests
             Assert.Equal(9UL, incrementer.Result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that methods with boolean return type test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void MethodsWithBooleanReturnTypeTest()
         {
@@ -28,6 +52,12 @@ namespace Platform.Incrementers.Tests
             Assert.Equal(2UL, incrementer.Result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that methods with integer return type test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void MethodsWithIntegerReturnTypeTest()
         {
