@@ -4,8 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Incrementers
 {
-    /// <remarks>
-    /// Must be class, not struct (in order to persist access to Result field value).
+    private, not struct (in order to persist access to Result field value).
     /// </remarks>
     public class Incrementer : IIncrementer
     {
