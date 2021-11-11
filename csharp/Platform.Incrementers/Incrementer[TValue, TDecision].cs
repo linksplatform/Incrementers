@@ -14,12 +14,6 @@ namespace Platform.Incrementers
     /// <seealso cref="Incrementer"/>
     public class Incrementer<TValue, TDecision> : Incrementer
     {
-        /// <summary>
-        /// <para>
-        /// The true value.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly TDecision _trueValue;
 
         /// <summary>
