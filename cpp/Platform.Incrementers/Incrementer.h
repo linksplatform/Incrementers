@@ -1,18 +1,28 @@
 ﻿namespace Platform::Incrementers
 {
-    class Incrementer : public IIncrementer
+    template<typename...>
+    class Incrementer;
+    template<>
+    class Incrementer<>
     {
-        protected: std::uint64_t _result = 0;
+    protected:
+        std::uint64_t _result = 0;
 
-        public: std::uint64_t Result()
+    public:
+        [[nodiscard]] std::uint64_t Result() const
         {
             return _result;
         }
 
-        public: Incrementer(std::uint64_t initialValue) { _result = initialValue; }
+        explicit Incrementer(std::uint64_t initialValue) : _result(initialValue)
+        {
+        }
 
-        public: Incrementer() { }
+        Incrementer() = default;
 
-        public: void Increment() { _result++; }
+        void Increment()
+        {
+            _result++;
+        }
     };
 }

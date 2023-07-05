@@ -1,35 +1,35 @@
-﻿namespace Platform::Incrementers::Tests
+#include <Platform.Incrementers.h>
+#include <gtest/gtest.h>
+
+namespace Platform::Incrementers::Tests
 {
-    TEST_CLASS(IncrementerTests)
+    TEST(IncrementersTests, ParameterlessConstructedSetterTest)
     {
-        public: TEST_METHOD(ParameterlessConstructedSetterTest)
-        {
-            Incrementer<std::int32_t> incrementer = Incrementer<std::int32_t>();
-            Assert::AreEqual(0, incrementer.Result);
-        }
+        Incrementer<int> incrementer = Incrementer<int>();
+        ASSERT_EQ({}, incrementer.Result());
+    }
 
-        public: TEST_METHOD(ConstructedWithDefaultValueSetterTest)
-        {
-            Incrementer<std::int32_t> incrementer = Incrementer<std::int32_t>(9UL);
-            Assert::AreEqual(9UL, incrementer.Result);
-        }
+    TEST(IncrementersTests, ConstructedWithDefaultValueSetterTest)
+    {
+        Incrementer<int> incrementer = Incrementer<int>(9UL);
+        ASSERT_EQ(9UL, incrementer.Result());
+    }
 
-        public: TEST_METHOD(MethodsWithBooleanReturnTypeTest)
-        {
-            Incrementer<std::int32_t> incrementer = Incrementer<std::int32_t>();
-            incrementer.Increment();
-            Assert::AreEqual(1UL, incrementer.Result);
-            Assert::IsTrue(incrementer.IncrementAndReturnTrue());
-            Assert::AreEqual(2UL, incrementer.Result);
-        }
+    TEST(IncrementersTests, MethodsWithBooleanReturnTypeTest)
+    {
+        Incrementer<int> incrementer = Incrementer<int>();
+        incrementer.Increment();
+        ASSERT_EQ(1UL, incrementer.Result());
+        ASSERT_TRUE(incrementer.IncrementAndReturnTrue());
+        ASSERT_EQ(2UL, incrementer.Result());
+    }
 
-        public: TEST_METHOD(MethodsWithIntegerReturnTypeTest)
-        {
-            Incrementer<std::int32_t, std::int32_t> incrementer = Incrementer<std::int32_t, std::int32_t>(1);
-            incrementer.Increment();
-            Assert::AreEqual(1UL, incrementer.Result);
-            Assert::AreEqual(1, incrementer.IncrementAndReturnTrue());
-            Assert::AreEqual(2UL, incrementer.Result);
-        }
-    };
+    TEST(IncrementersTests, MethodsWithIntegerReturnTypeTest)
+    {
+        Incrementer<int, int> incrementer = Incrementer<int, int>(1);
+        incrementer.Increment();
+        ASSERT_EQ(1UL, incrementer.Result());
+        ASSERT_EQ(1, incrementer.IncrementAndReturnTrue());
+        ASSERT_EQ(2UL, incrementer.Result());
+    }
 }

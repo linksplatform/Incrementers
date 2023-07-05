@@ -1,8 +1,8 @@
 ﻿namespace Platform::Incrementers
 {
-    class IIncrementer
+    template<typename _Type, typename TNumber = void>
+    concept IIncrementer = requires(_Type object, TNumber parameter)
     {
-    public:
-        virtual void Increment() = 0;
+        {object.Increment(parameter)} -> std::same_as<TNumber>;
     };
 }
