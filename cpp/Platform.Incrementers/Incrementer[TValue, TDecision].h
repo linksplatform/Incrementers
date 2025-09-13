@@ -1,23 +1,30 @@
-﻿namespace Platform::Incrementers
+#pragma once
+#include <cstdint>
+#include "Incrementer.h"
+
+namespace Platform::Incrementers
 {
-    template <typename ...> class Incrementer;
-    template <typename TValue, typename TDecision> class Incrementer<TValue, TDecision> : public Incrementer<>
+    template <typename TValue, typename TDecision> 
+    class Incrementer<TValue, TDecision> : public Incrementer<>
     {
-        private: TDecision _trueValue = 0;
+    private: 
+        TDecision _trueValue = TDecision{};
 
-        public: Incrementer(std::uint64_t initialValue, TDecision trueValue) : Incrementer<>(initialValue) { return _trueValue = trueValue; }
+    public: 
+        Incrementer(std::uint64_t initialValue, TDecision trueValue) 
+            : Incrementer<>(initialValue), _trueValue(trueValue) { }
 
-        public: Incrementer(TDecision trueValue) { _trueValue = trueValue; }
+        explicit Incrementer(TDecision trueValue) : _trueValue(trueValue) { }
 
-        public: Incrementer() { }
+        Incrementer() = default;
 
-        public: TDecision IncrementAndReturnTrue()
+        TDecision IncrementAndReturnTrue()
         {
             _result++;
             return _trueValue;
         }
 
-        public: TDecision IncrementAndReturnTrue(TValue value)
+        TDecision IncrementAndReturnTrue([[maybe_unused]] TValue value)
         {
             _result++;
             return _trueValue;
