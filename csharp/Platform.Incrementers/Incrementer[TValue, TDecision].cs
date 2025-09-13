@@ -68,7 +68,7 @@ namespace Platform.Incrementers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TDecision IncrementAndReturnTrue()
         {
-            _result++;
+            Increment();
             return _trueValue;
         }
 
@@ -89,7 +89,7 @@ namespace Platform.Incrementers
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TDecision IncrementAndReturnTrue(TValue value)
         {
-            _result++;
+            Increment();
             return _trueValue;
         }
     }
