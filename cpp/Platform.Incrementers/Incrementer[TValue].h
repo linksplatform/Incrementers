@@ -1,10 +1,16 @@
-﻿namespace Platform::Incrementers
-{
-    template <typename ...> class Incrementer;
-    template <typename TValue> class Incrementer<TValue> : public Incrementer<TValue, bool>
-    {
-        public: Incrementer(std::uint64_t initialValue) : Incrementer<TValue, bool>(initialValue, true) { }
+#pragma once
+#include <cstdint>
+#include "Incrementer[TValue, TDecision].h"
 
-        public: Incrementer() : Incrementer<TValue, bool>(true) { }
+namespace Platform::Incrementers
+{    
+    template <typename TValue> 
+    class Incrementer<TValue> : public Incrementer<TValue, bool>
+    {
+    public: 
+        explicit Incrementer(std::uint64_t initialValue) 
+            : Incrementer<TValue, bool>(initialValue, true) { }
+
+        Incrementer() : Incrementer<TValue, bool>(true) { }
     };
 }
