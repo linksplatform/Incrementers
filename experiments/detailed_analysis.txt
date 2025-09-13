@@ -1,0 +1,78 @@
+=== Performance Analysis: Increment Method vs Anonymous Lambda Functions ===
+
+Running 10 iterations of 1,000,000 operations each
+
+Run 1/10:
+  IncrementMethod          : 3 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 2/10:
+  IncrementMethod          : 7 ms
+  AnonymousLambda          : 5 ms
+  DirectAnonymousLambda    : 5 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 3/10:
+  IncrementMethod          : 6 ms
+  AnonymousLambda          : 9 ms
+  DirectAnonymousLambda    : 5 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 4/10:
+  IncrementMethod          : 6 ms
+  AnonymousLambda          : 6 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 5/10:
+  IncrementMethod          : 6 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 6/10:
+  IncrementMethod          : 3 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 7/10:
+  IncrementMethod          : 3 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 8/10:
+  IncrementMethod          : 4 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 3 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 9/10:
+  IncrementMethod          : 3 ms
+  AnonymousLambda          : 3 ms
+  DirectAnonymousLambda    : 3 ms
+  DirectFieldIncrement     : 0 ms
+
+Run 10/10:
+  IncrementMethod          : 3 ms
+  AnonymousLambda          : 2 ms
+  DirectAnonymousLambda    : 2 ms
+  DirectFieldIncrement     : 0 ms
+
+=== Statistical Summary ===
+IncrementMethod          : Avg=4.40ms, Min=3ms, Max=7ms, StdDev=1.56ms
+AnonymousLambda          : Avg=3.50ms, Min=2ms, Max=9ms, StdDev=2.29ms
+DirectAnonymousLambda    : Avg=2.80ms, Min=2ms, Max=5ms, StdDev=1.17ms
+DirectFieldIncrement     : Avg=0.00ms, Min=0ms, Max=0ms, StdDev=0.00ms
+
+=== Performance Comparison Analysis ===
+Direct Field Increment is the fastest (baseline)
+Anonymous Lambda is ∞x slower than direct field increment
+Incrementer.Increment() is ∞x slower than direct field increment
+Direct Anonymous Lambda is ∞x slower than direct field increment
+
+Comparing Incrementer.Increment() vs Anonymous Lambda:
+Anonymous Lambda is 1.26x faster than Incrementer.Increment()
